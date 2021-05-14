@@ -55,39 +55,44 @@
 // submitButton.addEventListener('click', showResults);
 //END TEST 1
 
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+var myQuestions = [
+    {
+        q: "What is Javascript?",
+        a: {
+            a: "A programming language",
+            b: "A foreign word",
+            c: "Man, Idk, where even am I?",
+            d: "An experimental weapon"
+        },
+        correctAnswer: "a"
+    },
+    {
+        q: "Javscript came out in _____?",
+        a: {
+            a: "1930",
+            b: "1950",
+            c: "Seriously, where am I?",
+            d: "1995"
+        },
+        correctAnswer: "d"
+    },
+    {
+        q: "How do you make a new variable?",
+        a: {
+            a: "bar",
+            b: "var",
+            c: "And where is everyone?",
+            d: "car"
+        },
+        correctAnswer: "b"
+    }
+];
+
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-    var myQuestions = [
-        {
-            q: "What is Javascript?",
-            a: {
-                a: "A programming language",
-                b: "A foreign word",
-                c: "Man, Idk, where even am I?",
-                d: "An experimental weapon"
-            },
-            correctAnswer: "a"
-        },
-        {
-            q: "Javscript came out in _____?",
-            a: {
-                a: "1930",
-                b: "1950",
-                c: "Seriously, where am I?",
-                d: "1995"
-            },
-            correctAnswer: "d"
-        },
-        {
-            q: "How do you make a new variable?",
-            a: {
-                a: "bar",
-                b: "var",
-                c: "And where is everyone?",
-                d: "car"
-            },
-            correctAnswer: "b"
-        }
-    ];
 
     function showQuestions(questions, quizContainer){
         //stores output & answer choices
@@ -109,11 +114,50 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
                     + '</label>'
                 );
             }
+
+            //add this q and its a's to output
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+			    + '<div class="answers">' + answers.join('') + '</div>'
+            );
         }
+        //combine output list into 1 string of html and put it on the page
+        quizContainer.innerHTML = output.join('');
     }
+    showQuestions(questions, quizContainer);
 
     function showResults(questions, quizContainer, resultsContainer){
+        
+	    // gather answer containers from our quiz
+	    var answerContainers = quizContainer.querySelectorAll('.answers');
+	
+	    // keep track of user's answers
+	    var userAnswer = '';
+	    var numCorrect = 0;
+	
+	    // for each question...
+	    for(var i=0; i<questions.length; i++){
 
+		    // find selected answer
+		    userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+		    // if answer is correct
+		    if(userAnswer===questions[i].correctAnswer){
+			    // add to the number of correct answers
+			    numCorrect++;
+			
+			    // color the answers green
+			    answerContainers[i].style.color = 'lightgreen';
+		}
+		// if answer is wrong or blank
+		else{
+			// color the answers red
+			answerContainers[i].style.color = 'red';
+		    }
+	    }
+
+	    // show number of correct answers out of total
+	    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
     }
 
     //show questions
@@ -124,6 +168,10 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         showResults(questions, quizContainer, resultsContainer);
     }
 }
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+
+
 
 
 
