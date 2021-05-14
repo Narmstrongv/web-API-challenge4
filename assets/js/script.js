@@ -9,3 +9,55 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit')
+
+function buildQuiz(){
+    var output = [];
+    myQuestions.forEach(
+        
+    )
+}
+
+function showResults(){}
+
+//displays the quiz
+buildQuiz();
+
+//on submit, show results
+submitButton.addEventListener('click', showResults);
+
+var myQuestions = [
+    {
+        q: "What is Javascript?",
+        a: {
+            a: "A programming language",
+            b: "A foreign word",
+            c: "Man, Idk, where even am I?",
+            d: "An experimental weapon"
+        },
+        correctAnswer: "a"
+    },
+    {
+        q: "Javscript came out in _____?",
+        a: {
+            a: "1930",
+            b: "1950",
+            c: "Seriously, where am I?",
+            d: "1995"
+        },
+        correctAnswer: "d"
+    },
+    {
+        q: "How do you make a new variable?",
+        a: {
+            a: "bar",
+            b: "var",
+            c: "And where is everyone?",
+            d: "car"
+        },
+        correctAnswer: "b"
+    }
+];
