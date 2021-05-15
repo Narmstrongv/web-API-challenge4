@@ -19,6 +19,18 @@
         </div>
     </div>
 
+    <!-- question form -->
+    <h1>What is Javascript?</h1><br>
+    <form>
+        <input type="radio" name="choice" value="language"> A programming language
+        <input type="radio" name="choice" value="foreign"> A foreign word
+        <input type="radio" name="choice" value="Idk"> Man, Idk, where even am I?
+        <input type="radio" name="choice" value="weapon"> An experimental weapon
+    </form>
+    <button onclick="submitAnswer()">Submit Answer</button>
+
+
+
     <!--button-->
     <div class="buttons">
         <button class="quit">Continue</button>
@@ -33,7 +45,7 @@
             </div>
         </header>
         <div class="que_text"></div>
-        <div class="option_list"></div>
+        <div id="questions" class="option_list">   </div>
         
         <footer>
             <!--question total -->
