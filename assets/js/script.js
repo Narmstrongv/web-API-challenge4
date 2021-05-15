@@ -45,3 +45,28 @@
 //     }
 // ];
 //QUESTION LIST END
+
+const info_box = document.querySelector(".info_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+const quit_quiz = result_box.querySelector(".buttons .quit");
+const next_btn = document.querySelector("footer .next_btn");
+
+//startQuiz button (not needed?)
+
+//quitQuiz button
+quit_quiz.onclick = ()=>{
+    window.location.reload();
+}
+
+//nextQue button
+next_btn.onclick = ()=>{
+    //if question count less than total questions
+    if(que_count < questions.length - 1){
+
+    }
+}
