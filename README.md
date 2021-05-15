@@ -4,7 +4,7 @@
 The code quiz allows users to test their JavaScript knowledge and log their high scores to the local board.
 
 # Screenshot
-![Password Generator Screenshot](assets/ images/ PassGenScrnsht.png)
+![Code Quiz Screenshot](assets/images/CodeQuizScreenshot.png)
 
 # Website
 https://narmstrongv.github.io/web-API-challenge4/
