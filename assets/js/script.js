@@ -1,4 +1,4 @@
-//Rules
+//RULES
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
@@ -10,6 +10,8 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and score
+
+const next_btn = document.querySelector("footer .next_btn");
 
 //QUESTION LIST START
 var myQuestions = [
@@ -46,33 +48,10 @@ var myQuestions = [
 ];
 //QUESTION LIST END
 
-const info_box = document.querySelector(".info_box");
-const exit_btn = info_box.querySelector(".buttons .quit");
-const quiz_box = document.querySelector(".quiz_box");
-const result_box = document.querySelector(".result_box");
-const time_line = document.querySelector("header .time_line");
-const timeText = document.querySelector(".timer .time_left_txt");
-const timeCount = document.querySelector(".timer .timer_sec");
-const quit_quiz = result_box.querySelector(".buttons .quit");
-const next_btn = document.querySelector("footer .next_btn");
-const continue_btn = info_box.querySelector(".buttons .restart");
-
-let timeValue =  75;
-let que_count = 0;
-let que_numb = 1;
-let userScore = 0;
-let counter = 0;
-let counterLine;
-let widthValue = 0;
-
 //this hides things
 //document.getElementById('multi').style.display= "none";
 
-//upon correct answer
-//make box disappear
-//then show next question
-//correct answer etc
-
+//quiz method 1
 var submitAnswer = function() {
     var radios = document.getElementsByName('choice')
     var val = "";
@@ -84,7 +63,7 @@ var submitAnswer = function() {
     }
 
     if (val == "") {
-        alert('please select an answer');
+        alert('Please select an answer');
     } else if (val == "language") {
         alert('Correct!');
     } else {
@@ -92,9 +71,8 @@ var submitAnswer = function() {
     }
 };
 
-//startQuiz button (not needed?)
 
-//continueQuiz button
+//this rotates questions, but only the titles??
 next_btn.addEventListener('click', function(){
     //     var question = '';
     // for(var i = 0; i < myQuestions.length; i++) {
@@ -109,4 +87,10 @@ next_btn.addEventListener('click', function(){
 }) 
 
 
-    
+
+//TODO
+//clean up buttons, start goes where?
+//upon correct answer
+//make box disappear
+//then show next question
+//repeat etc
