@@ -10,4 +10,4 @@ The code quiz allows users to test their JavaScript knowledge and log their high
 https://narmstrongv.github.io/web-API-challenge4/
 
 # Notes
-Tried to get as many pieces working as possible.
+Any tips on better understanding the fundamentals of Javascript would be greatly appreciated.
