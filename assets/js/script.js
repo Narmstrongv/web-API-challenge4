@@ -89,17 +89,12 @@ var seconds = document.getElementById("timer").textContent;
 var countdown = setInterval(function() {
     seconds--;
     document.getElementById("timer").textContent = seconds;
-    if (seconds <= 0) clearInterval(countdown);
+    if (seconds <= 0) { 
+        clearInterval(countdown);
+        document.getElementById("timer").innerHTML = "Time Up"
+    }
 }, 1000);
 
-
-
-//TODO
-//clean up buttons, start goes where?
-//upon correct answer
-//make box disappear
-//then show next question
-//repeat etc
 
 //this hides things
 //document.getElementById('multi').style.display= "none";
