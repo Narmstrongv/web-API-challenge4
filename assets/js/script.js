@@ -48,8 +48,6 @@ var myQuestions = [
 ];
 //QUESTION LIST END
 
-//this hides things
-//document.getElementById('multi').style.display= "none";
 
 //quiz method 1
 var submitAnswer = function() {
@@ -86,6 +84,14 @@ next_btn.addEventListener('click', function(){
     counter = counter + 1;
 }) 
 
+// timer func
+var seconds = document.getElementById("timer").textContent;
+var countdown = setInterval(function() {
+    seconds--;
+    document.getElementById("timer").textContent = seconds;
+    if (seconds <= 0) clearInterval(countdown);
+}, 1000);
+
 
 
 //TODO
@@ -94,3 +100,6 @@ next_btn.addEventListener('click', function(){
 //make box disappear
 //then show next question
 //repeat etc
+
+//this hides things
+//document.getElementById('multi').style.display= "none";
